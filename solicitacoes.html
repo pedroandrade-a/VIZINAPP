@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VizinApp - Solicitações</title>
+    <!-- Ícone da aba do navegador (Favicon) -->
+    <link rel="icon" type="image/jpeg" href="imagens/logo.jpeg">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="solicitacoes-page">
+
+    <!-- CABEÇALHO -->
+    <header class="topbar">
+
+        <div class="container topbar-content">
+
+            <div class="logo">
+                <h2>VizinApp</h2>
+            </div>
+
+            <nav>
+                <a href="index.html">
+                    Início
+                </a>
+
+                <a href="solicitacoes.html" class="active">
+                    Solicitações
+                </a>
+
+                <button
+                    id="logoutBtn"
+                    class="btn-secondary"
+                    type="button"
+                >
+                    Sair
+                </button>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTEÚDO -->
+    <main class="container solicitacoes-container">
+
+
+        <!-- CABEÇALHO -->
+        <section class="page-header">
+
+            <div>
+
+                <span class="page-label">
+                    ASSOCIAÇÃO DE MORADORES
+                </span>
+
+                <h1>
+                    Solicitações
+                </h1>
+
+                <p>
+                    Registre e acompanhe as demandas do seu bairro
+                    encaminhadas à Prefeitura de Maricá.
+                </p>
+
+            </div>
+
+
+            <a
+                href="#novaSolicitacao"
+                id="btnNovaSolicitacaoHeader"
+                class="btn-primary"
+            >
+                + Nova Solicitação
+            </a>
+
+        </section>
+
+
+        <!-- INFORMAÇÕES DA ASSOCIAÇÃO -->
+        <section
+            class="association-info"
+            id="perfilUsuario"
+        >
+
+            <!--
+                As informações da associação
+                serão preenchidas pelo JavaScript.
+            -->
+
+        </section>
+
+
+        <!-- NOVA SOLICITAÇÃO -->
+        <section
+            class="solicitacao-section"
+            id="novaSolicitacao"
+        >
+
+            <div class="section-title">
+
+                <span class="page-label">
+                    NOVA DEMANDA
+                </span>
+
+                <h2>
+                    Registrar nova solicitação
+                </h2>
+
+                <p>
+                    Informe os detalhes do problema identificado
+                    pela associação.
+                </p>
+
+            </div>
+
+
+            <form
+                id="novaSolicitacaoForm"
+                class="solicitacao-form"
+            >
+
+
+                <!-- SECRETARIA -->
+                <div class="input-group">
+
+                    <label for="secretaria">
+                        Secretaria responsável *
+                    </label>
+
+                    <select
+                        id="secretaria"
+                        required
+                    >
+
+                        <option value="">
+                            Selecione uma secretaria
+                        </option>
+
+                        <option value="Infraestrutura">
+                            Infraestrutura
+                        </option>
+
+                        <option value="Iluminação Pública">
+                            Iluminação Pública
+                        </option>
+
+                        <option value="Limpeza Urbana">
+                            Limpeza Urbana
+                        </option>
+
+                        <option value="Saneamento">
+                            Saneamento
+                        </option>
+
+                        <option value="Transporte">
+                            Transporte
+                        </option>
+
+                        <option value="Praças e Espaços Públicos">
+                            Praças e Espaços Públicos
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TÍTULO -->
+                <div class="input-group">
+
+                    <label for="titulo">
+                        Título da solicitação *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="titulo"
+                        placeholder="Ex.: Buraco em via principal do bairro"
+                        maxlength="100"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- LOCALIZAÇÃO -->
+                <div class="input-group">
+
+                    <label for="localizacao">
+                        Local do problema *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="localizacao"
+                        placeholder="Rua, número ou ponto de referência"
+                        maxlength="150"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- DESCRIÇÃO -->
+                <div class="input-group">
+
+                    <label for="descricao">
+                        Descrição *
+                    </label>
+
+                    <textarea
+                        id="descricao"
+                        rows="6"
+                        placeholder="Descreva detalhadamente o problema, sua localização e como ele afeta os moradores..."
+                        maxlength="1000"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- PRIORIDADE -->
+                <div class="input-group">
+
+                    <label for="prioridade">
+                        Prioridade
+                    </label>
+
+                    <select id="prioridade">
+
+                        <option value="Normal">
+                            Normal
+                        </option>
+
+                        <option value="Alta">
+                            Alta
+                        </option>
+
+                        <option value="Urgente">
+                            Urgente
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- OPÇÃO DE ANONIMATO (US05) -->
+
+                <div class="input-group remember-me" style="grid-column: span 2; margin-top: 10px;">
+                    <input type="checkbox" id="isAnonimo">
+                    <label for="isAnonimo" style="font-weight: normal; cursor: pointer;">
+                        Desejo enviar esta solicitação de forma <strong>anônima</strong> (não vincular meu nome publicamente).
+                    </label>
+                </div>
+
+                <!-- BOTÕES -->
+                <div class="form-actions">
+
+                    <button
+                        type="reset"
+                        class="btn-secondary"
+                    >
+                        Limpar
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn-primary"
+                    >
+                        Registrar solicitação
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- MINHAS SOLICITAÇÕES -->
+        <section class="solicitacao-section">
+
+            <div class="section-title">
+
+                <span class="page-label">
+                    ACOMPANHAMENTO
+                </span>
+
+                <h2>
+                    Minhas solicitações
+                </h2>
+
+                <p>
+                    Acompanhe o andamento das demandas registradas
+                    pela associação.
+                </p>
+
+            </div>
+
+
+            <div
+                id="solicitacoesList"
+                class="solicitacoes-list"
+            >
+
+                <div class="empty-message">
+
+                    <h3>
+                        Carregando solicitações...
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 VizinApp - Projeto Extensionista
+            </p>
+
+            <p>
+                Comunicação entre Associações de Moradores
+                e a Prefeitura de Maricá.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ícone da aba do navegador (Favicon) -->
+    <link rel="icon" type="image/jpeg" href="imagens/logo.jpeg">
+    <title>VizinApp - Acesso e Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- BANNER LATERAL -->
+        <div class="banner-side">
+            <img id="banner-img" src="imagens/marica-bnt.jpeg" alt="Imagem de Capa">
+            <div class="image-credits"> Foto: Autor Desconhecido / Fonte: https://commons.wikimedia.org/wiki/File:Cidade_de_Maric%C3%A1.jpg</div>
+        </div>
+
+        <!-- FORMULÁRIOS DE ACESSO -->
+        <div class="form-side">
+            <div id="message-box"></div>
+
+            <!-- 1. TELA DE LOGIN (ASSOCIAÇÃO DE MORADORES) -->
+            <div id="loginSection">
+                <div class="header-area">
+                    <div class="logo-placeholder">
+                        <img src="imagens/logo.jpeg" alt="Logo VizinApp">
+                    </div>
+                    <div class="header-text">
+                        <h1>Bem-vindo</h1>
+                        <p>É da associação? <a href="#" id="linkParaCadastro" class="link-cadastro">Cadastre-se</a></p>
+                    </div>
+                </div>
+
+                <form class="login-form" id="loginForm">
+                    <div class="input-group">
+                        <label for="username">Usuário ou E-mail:</label>
+                        <input type="text" id="username" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" required>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="remember">
+                            Manter logado
+                        </label>
+                        <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Entrar como Associado</button>
+
+                    <div class="guest-option">
+                        <p>Morador não associado? <a href="#" id="btnModoVisitante" class="link-cadastro">Acessar para Acompanhar Denúncias</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- 2. TELA DE CADASTRO (EXCLUSIVA PARA INTEGRANTES DA ASSOCIAÇÃO) -->
+            <div id="registerSection" class="hidden">
+                <div class="header-area">
+                    <div class="logo-placeholder">VIZINAPP</div>
+                    <div class="header-text">
+                        <h1>Cadastro de Integrante</h1>
+                        <p>Já possui conta? <a href="#" id="linkParaLogin" class="link-cadastro">Faça Login</a></p>
+                    </div>
+                </div>
+
+                <form class="login-form" id="registerForm">
+                    <div class="input-group">
+                        <label for="regNome">Nome Completo:</label>
+                        <input type="text" id="regNome" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="regCpf">CPF:</label>
+                        <input type="text" id="regCpf" placeholder="000.000.000-00" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="regEndereco">Endereço / Bairro:</label>
+                        <input type="text" id="regEndereco" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="regEmail">E-mail (Login):</label>
+                        <input type="email" id="regEmail" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="regPassword">Senha:</label>
+                        <input type="password" id="regPassword" required>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Concluir Cadastro e Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
